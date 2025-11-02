@@ -35,6 +35,9 @@ urlpatterns = [
 
 # Serve media files (dev only)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# THIS LINE IS MISSING IN YOUR CODE
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+urlpatterns += staticfiles_urlpatterns()
 
 # *** NEW *** Serve DRF‑YASG static files in production
 if not settings.DEBUG:
